@@ -1,0 +1,64 @@
+def longestWordLength(string):
+    l = 0
+    w = ' '
+    words = string.split()
+    for word in words:
+        if (len(word) > l):
+            w = word
+            l = len(word)
+    return (w,l)
+
+string = input("Enter the String :) ")
+w,l = longestWordLength(string)
+print("Longest Word is :) ",w)
+print("Length of Longest word is :) ",l)
+
+# Second 
+char = input ("Enter Character :) ")
+count = 0
+# while i < len(string):
+#     if string[i] == char :
+#         count = count+1
+#     i += 1
+# print('Total Number of ', char, 'is', count)
+
+for i in string:
+    if i==char:
+        count += 1
+print("Total Number of Char is :) ",count)
+
+# Question 3
+def palindrome(string):
+    rev = ''.join(reversed(string))
+    if(string == rev):
+        return Treue
+    return False
+s=string
+ans=palindrome(string)
+if(ans):
+    print("Yes , String is Palindorme ")
+else:
+    print("No , String is not Palindrome")
+
+# Question 4
+substring = input("Enter SubString :) ")
+f=0
+for i in range(len(string)):
+    for j in range (len(substring)):
+        if string[i] == substring[j]:
+            j = j+1
+        else:
+            j=0
+    if j==len(substring):
+        f=1
+        print("SubString Found at :) ",i-len(substring)+1)
+if f==0:
+    print("Not Found !")
+
+# Question 5
+word = len(string)
+for i in range(len(string)):
+    for j in i:
+        if j == i:
+            j += 1
+            break
